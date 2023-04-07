@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <nav>
+        <ul class="nav-cont">
+            <li class="nav-item"><a href="#home">Home</a></li>
+            <li class="nav-item"><a href="#about">About</a></li>
+            <li class="nav-item"><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class = "full-img" id = "fullImgBox">
+        <img src = "images/leo.jpg" id="fullImg">
+        <span onclick="closeFullImg()">x</span>
+    </div>
+    <div class = "img-gallery">
+        <img src = "images/leo.jpg" onclick="openFullImg(this.src)">
+        <img src = "images/leo.jpg" onclick="openFullImg(this.src)">
+        <img src = "images/leo.jpg" onclick="openFullImg(this.src)">
+        <img src = "images/leo.jpg" onclick="openFullImg(this.src)">
+        <img src = "images/leo.jpg" onclick="openFullImg(this.src)">
+        <img src = "images/leo.jpg" onclick="openFullImg(this.src)">
+        <img src = "images/leo.jpg" onclick="openFullImg(this.src)">
+        <img src = "images/leo.jpg" onclick="openFullImg(this.src)">
+        
+    </div>
+
+
+    
+
+<script>
+    var fullImgBox = document.getElementById("fullImgBox");
+    var fullImg = document.getElementById("fullImg");
+
+    function openFullImg(pic){
+        fullImgBox.style.display = "flex";
+        fullImg.src = pic;
+    }
+    function closeFullImg(){
+        fullImgBox.style.display = "none";
+    }
+
+</script>
+<script>
+    function sortTable() {
+      var table, rows, switching, i, x, y, shouldSwitch;
+      table = document.getElementById("myTable");
+      switching = true;
+      while (switching) {
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < (rows.length - 1); i++) {
+          shouldSwitch = false;
+          x = rows[i].getElementsByTagName("TD")[0];
+          y = rows[i + 1].getElementsByTagName("TD")[0];
+          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+        }
+      }
+    }
+    </script>
+
+    
+    <div id ="about">
+        <h3>ABOUT ME</h3>
+
+        <table id="myTable">
+  
+            <tr>
+              <td><img src="images/leo.jpg" width="400" height="350"></td>
+              <td><h2>HELLO!</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna 
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </td>
+            </tr>
+            
+          </table>
+    </div>
+    <div id ="contact">
+        <h3>CONTACT ME</h3>
+    </div>
+
+
+</body>
+</html>
